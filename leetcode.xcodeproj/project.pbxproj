@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		32A0687323091D76003B6D29 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A0687223091D76003B6D29 /* main.swift */; };
 		32A0688623092158003B6D29 /* solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A0688523092158003B6D29 /* solution.swift */; };
-		32A0688F2309260A003B6D29 /* tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A0688E2309260A003B6D29 /* tests.swift */; };
+		32F60412230957D600045F5B /* tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A0688E2309260A003B6D29 /* tests.swift */; };
+		32F60415230957EF00045F5B /* solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A0688523092158003B6D29 /* solution.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -229,7 +230,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32A0688F2309260A003B6D29 /* tests.swift in Sources */,
+				32F60415230957EF00045F5B /* solution.swift in Sources */,
+				32F60412230957D600045F5B /* tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,8 +273,9 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTABILITY = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -332,6 +335,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -412,6 +416,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -429,6 +434,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

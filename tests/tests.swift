@@ -7,20 +7,19 @@
 //
 
 import XCTest
+@testable import leetcode
 
-func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
-    var container = Dictionary<Int, Int>()
-    for (index, value) in nums.enumerated() {
-        let match = target - value
-        if container.keys.contains( match)
-        {
-            return [container[match] as! Int, index]
-            
-        }
-        container[value] = index
+
+
+public class ListNode{
+    public var val: Int
+    public var next: ListNode?
+    public init(_ val:Int) {
+        self.val = val
+        self.next = nil
     }
-    return []
 }
+
 
 class tests: XCTestCase {
 
@@ -40,6 +39,19 @@ class tests: XCTestCase {
         //print(s)
         let results = twoSum([1,2,3], 5)
         print(results)
+    }
+    
+    func testAddTwoNumbers() {
+        let l1 = ListNode(2)
+        l1.next = ListNode(4)
+        l1.next?.next = ListNode(3)
+        
+        let l2 = ListNode(5)
+        l2.next = ListNode(6)
+        l2.next?.next = ListNode(4)
+        
+        let r = addTwoNumbers(l1,l2)
+        print(r)
     }
 
 }
