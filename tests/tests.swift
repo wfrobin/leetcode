@@ -53,5 +53,32 @@ class tests: XCTestCase {
         let r = addTwoNumbers(l1,l2)
         print(r)
     }
+    
+    func test_lengthOfLongestSubstring()
+    {
+        var r = lengthOfLongestSubstring("abcabcbb")
+        XCTAssertEqual(3, r)
+        print("lengthOfLongestSubstring:", r)
+        
+        r = lengthOfLongestSubstring("bbb")
+        XCTAssertEqual(1, r)
+        print("lengthOfLongestSubstring:", r)
+        
+        r = lengthOfLongestSubstring("pwwkew")
+        XCTAssertEqual(3, r)
+        print("lengthOfLongestSubstring:", r)
+        
+        r = lengthOfLongestSubstring(" ")
+        XCTAssertEqual(1, r)
+        print("lengthOfLongestSubstring:", r)
+        
+        r = lengthOfLongestSubstring("")
+        XCTAssertEqual(0, r)
+        print("lengthOfLongestSubstring:", r)
+        
+        r = lengthOfLongestSubstring("dvdf")
+        XCTAssertEqual(3, r)
+        print("lengthOfLongestSubstring:", r)
+    }
 
 }

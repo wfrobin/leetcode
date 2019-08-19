@@ -91,3 +91,22 @@ func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
     return rchead
 }
 
+func lengthOfLongestSubstring(_ s: String) -> Int {
+    
+    var cq = [Character]()
+    var max_count = 0
+    for c in s{
+        if cq.contains(c){
+            var index = cq.firstIndex(of: c)
+            if cq.count > max_count{
+                max_count = cq.count
+            }
+            cq = cq.suffix(cq.count - index! - 1)
+        }
+        cq.append(c)
+    }
+    
+    return max_count < cq.count ? cq.count: max_count
+}
+
+
