@@ -51,7 +51,7 @@ class tests: XCTestCase {
         l2.next?.next = ListNode(4)
         
         let r = addTwoNumbers(l1,l2)
-        print(r)
+        print(r!)
     }
     
     func test_lengthOfLongestSubstring()
