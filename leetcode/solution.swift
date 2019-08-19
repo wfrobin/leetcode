@@ -59,17 +59,17 @@ public func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
 func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
     
     var step: Int = 0
-    var results = [Int]()
     var rc:ListNode? = nil
     var rchead:ListNode? = nil
     var c1 = l1
     var c2 = l2
+    var n1,n2, sum, r: Int
     while (c1 != nil || c2 != nil ) {
-        var n1 = c1 != nil ? c1!.val:0
-        var n2 = c2 != nil ? c2!.val:0
-        var sum = n1 + n2 + step
+        n1 = c1 != nil ? c1!.val:0
+        n2 = c2 != nil ? c2!.val:0
+        sum = n1 + n2 + step
         step = sum >= 10 ? 1:0
-        var r = sum >= 10 ? sum - 10: sum
+        r = sum >= 10 ? sum - 10: sum
         if rc == nil{
             rc = ListNode(r)
             rchead = rc
