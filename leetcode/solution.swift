@@ -110,3 +110,32 @@ func lengthOfLongestSubstring(_ s: String) -> Int {
 }
 
 
+func isPalindrome(q: [(Int, Character)])->Bool{
+    let len = q.count
+    let count:Int = len / 2
+    for var i in (0..<count) {
+        var first_c = q[i].1
+        var second_c = q[len-i-1].1
+        if ( first_c != second_c){
+            return false
+        }
+    }
+    return true
+}
+
+func longestPalindrome(_ s: String) -> String {
+    var cq:[Character]
+    var tempq:[(Int,Character)]=[]
+    var max_count = 0
+    for (index, c) in s.enumerated()
+    {
+        tempq.append((index, c))
+        if isPalindrome(q: tempq) == true{
+            max_count = max_count < tempq.count ? tempq.count : max_count
+        }
+        else{
+            
+        }
+    }
+    return ""
+}

@@ -80,5 +80,10 @@ class tests: XCTestCase {
         XCTAssertEqual(3, r)
         print("lengthOfLongestSubstring:", r)
     }
+    
+    func test_longestPalindrome()
+    {
+        var r = longestPalindrome("abcd")
+    }
 
 }
