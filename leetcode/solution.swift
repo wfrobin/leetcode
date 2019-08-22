@@ -123,19 +123,174 @@ func isPalindrome(q: [(Int, Character)])->Bool{
     return true
 }
 
-func longestPalindrome(_ s: String) -> String {
-    var cq:[Character]
-    var tempq:[(Int,Character)]=[]
-    var max_count = 0
-    for (index, c) in s.enumerated()
-    {
-        tempq.append((index, c))
-        if isPalindrome(q: tempq) == true{
-            max_count = max_count < tempq.count ? tempq.count : max_count
+func getLP_single(_ s:String, _ start_index:String.Index) -> String {
+    
+    let len = s.count
+    
+    var right_pos, left_pos, start_pos: Int
+
+    start_pos = s.distance(from: s.startIndex, to: start_index)
+    
+    
+    right_pos = start_pos
+    left_pos =  start_pos
+    
+    var right_char, left_char: Character
+    while true {
+        
+        if right_pos - 1 < 0 || left_pos + 1 >= len {
+            break
         }
-        else{
-            
+        right_char = s[s.index(s.startIndex, offsetBy: right_pos - 1)]
+        left_char = s[s.index(s.startIndex, offsetBy: left_pos + 1)]
+        
+        if right_char == left_char{
+            right_pos -= 1
+            left_pos += 1
+            continue
+        }
+        else
+        {
+            break
         }
     }
-    return ""
+
+    
+    return String(s[s.index(s.startIndex, offsetBy: right_pos) ... s.index(s.startIndex, offsetBy: left_pos)])
+}
+
+func getLP_double(_ s:String, _ start_index:String.Index) -> String {
+    
+    let len = s.count
+    
+    var right_pos, left_pos, start_pos: Int
+    
+    start_pos = s.distance(from: s.startIndex, to: start_index)
+    
+    
+    
+    right_pos = start_pos
+    left_pos =  start_pos+1 >= len ? start_pos : start_pos + 1
+    
+    if right_pos == left_pos{
+        return ""
+    }
+    
+    if s[s.index(s.startIndex, offsetBy: right_pos)] != s[s.index(s.startIndex, offsetBy: left_pos)]{
+        return ""
+    }
+    
+    var right_char, left_char: Character
+    while true {
+        
+        if right_pos-1 < 0 || left_pos + 1 >= len {
+            break
+        }
+        
+        right_char = s[s.index(s.startIndex, offsetBy: right_pos - 1)]
+        left_char = s[s.index(s.startIndex, offsetBy: left_pos + 1)]
+        
+        if right_char == left_char{
+            right_pos -= 1
+            left_pos += 1
+            continue
+        }
+        else
+        {
+            break
+        }
+    }
+    
+    
+    return String(s[s.index(s.startIndex, offsetBy: right_pos) ... s.index(s.startIndex, offsetBy: left_pos)])
+}
+
+
+func getLP_single_cc(_ s:[CChar], _ start_index:Int) -> (Int, Int) {
+    
+    let len = s.count
+    var right_pos, left_pos: Int
+    right_pos = start_index
+    left_pos =  start_index
+    
+    while true {
+        if right_pos - 1 < 0 || left_pos + 1 >= len {
+            break
+        }
+
+        if s[right_pos - 1 ] == s[left_pos + 1]{
+            right_pos -= 1
+            left_pos += 1
+            continue
+        }
+        break
+    }
+    var temp_cc = [CChar](s[right_pos ... left_pos])
+    temp_cc.append(0)
+    return (right_pos, left_pos)
+}
+
+func getLP_double_cc(_ s:[CChar], _ start_index:Int) -> (Int, Int) {
+    
+    let len = s.count
+    
+    var right_pos, left_pos: Int
+    
+    right_pos = start_index
+    if start_index + 1 >= len{
+        return (0, 0)
+        
+    }
+    left_pos =  start_index + 1
+    
+    if s[right_pos] != s[left_pos]{
+        return (0, 0)
+    }
+
+    while true {
+        
+        if right_pos-1 < 0 || left_pos + 1 >= len {
+            break
+        }
+
+        if s[right_pos - 1] == s[left_pos + 1]{
+            right_pos -= 1
+            left_pos += 1
+            continue
+        }
+        break
+    }
+    
+    var temp_cc = [CChar](s[right_pos ... left_pos])
+    temp_cc.append(0)
+    return (right_pos, left_pos)
+}
+
+
+func longestPalindrome(_ s: String) -> String {
+    var max_p = ""
+    var temps, temps_d: String
+    for var i in 0 ..< s.count{
+        temps = getLP_single(s, s.index(s.startIndex, offsetBy: i))
+        temps_d = getLP_double(s, s.index(s.startIndex, offsetBy: i))
+        max_p = max_p.count < temps.count ? temps : max_p
+        max_p = max_p.count < temps_d.count ? temps_d : max_p
+    }
+    return max_p
+}
+
+func longestPalindrome_refactor(_ s: String) -> String {
+    var max_right_pos, max_left_pos:Int
+    max_left_pos = 0
+    max_right_pos = 0
+    var temps, temps_d: [CChar]
+    var right_pos, left_pos: Int
+    var cc:[CChar] = s.cString(using: String.Encoding.utf8)!
+    for var i in 0 ..< cc.count{
+        (right_pos, left_pos) = getLP_single_cc(cc, i)
+        (max_right_pos, max_left_pos) = max_left_pos - max_right_pos < left_pos - right_pos ? ( right_pos, left_pos) : (max_right_pos, max_left_pos)
+        (right_pos, left_pos) = getLP_double_cc(cc, i)
+        (max_right_pos, max_left_pos) = max_left_pos - max_right_pos < left_pos - right_pos ? ( right_pos, left_pos) : (max_right_pos, max_left_pos)
+    }
+    return String(s[s.index(s.startIndex, offsetBy: max_right_pos) ... s.index(s.startIndex, offsetBy: max_left_pos)])
 }
