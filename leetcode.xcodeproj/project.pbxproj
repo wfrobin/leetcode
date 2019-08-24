@@ -7,29 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32A0687323091D76003B6D29 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A0687223091D76003B6D29 /* main.swift */; };
-		32A0688623092158003B6D29 /* solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A0688523092158003B6D29 /* solution.swift */; };
 		32F60412230957D600045F5B /* tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A0688E2309260A003B6D29 /* tests.swift */; };
 		32F60415230957EF00045F5B /* solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A0688523092158003B6D29 /* solution.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		32A0686D23091D76003B6D29 /* Copy Files */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			name = "Copy Files";
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		32A0686F23091D76003B6D29 /* leetcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = leetcode; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A0687223091D76003B6D29 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		32A0687D23091E8E003B6D29 /* issue.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = issue.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A0688523092158003B6D29 /* solution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = solution.swift; sourceTree = "<group>"; };
 		32A0688C2309260A003B6D29 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A0688E2309260A003B6D29 /* tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tests.swift; sourceTree = "<group>"; };
@@ -37,20 +20,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		32A0686C23091D76003B6D29 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		32A0687A23091E8E003B6D29 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		32A068892309260A003B6D29 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -73,8 +42,6 @@
 		32A0687023091D76003B6D29 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				32A0686F23091D76003B6D29 /* leetcode */,
-				32A0687D23091E8E003B6D29 /* issue.xctest */,
 				32A0688C2309260A003B6D29 /* tests.xctest */,
 			);
 			name = Products;
@@ -101,40 +68,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		32A0686E23091D76003B6D29 /* leetcode */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 32A0687623091D76003B6D29 /* Build configuration list for PBXNativeTarget "leetcode" */;
-			buildPhases = (
-				32A0686B23091D76003B6D29 /* Sources */,
-				32A0686C23091D76003B6D29 /* Frameworks */,
-				32A0686D23091D76003B6D29 /* Copy Files */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = leetcode;
-			productName = leetcode;
-			productReference = 32A0686F23091D76003B6D29 /* leetcode */;
-			productType = "com.apple.product-type.tool";
-		};
-		32A0687C23091E8E003B6D29 /* issue */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 32A0688223091E8E003B6D29 /* Build configuration list for PBXNativeTarget "issue" */;
-			buildPhases = (
-				32A0687923091E8E003B6D29 /* Sources */,
-				32A0687A23091E8E003B6D29 /* Frameworks */,
-				32A0687B23091E8E003B6D29 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = issue;
-			productName = issue;
-			productReference = 32A0687D23091E8E003B6D29 /* issue.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		32A0688B2309260A003B6D29 /* tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32A068912309260A003B6D29 /* Build configuration list for PBXNativeTarget "tests" */;
@@ -162,12 +95,6 @@
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Wang Fan";
 				TargetAttributes = {
-					32A0686E23091D76003B6D29 = {
-						CreatedOnToolsVersion = 10.3;
-					};
-					32A0687C23091E8E003B6D29 = {
-						CreatedOnToolsVersion = 10.3;
-					};
 					32A0688B2309260A003B6D29 = {
 						CreatedOnToolsVersion = 10.3;
 					};
@@ -185,21 +112,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				32A0686E23091D76003B6D29 /* leetcode */,
-				32A0687C23091E8E003B6D29 /* issue */,
 				32A0688B2309260A003B6D29 /* tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		32A0687B23091E8E003B6D29 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		32A0688A2309260A003B6D29 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,22 +128,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		32A0686B23091D76003B6D29 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				32A0688623092158003B6D29 /* solution.swift in Sources */,
-				32A0687323091D76003B6D29 /* main.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		32A0687923091E8E003B6D29 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		32A068882309260A003B6D29 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -338,6 +240,7 @@
 				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -355,75 +258,21 @@
 			};
 			name = Release;
 		};
-		32A0687723091D76003B6D29 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		32A0687823091D76003B6D29 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		32A0688323091E8E003B6D29 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = issue/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "wfrobin-163.com.issue";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		32A0688423091E8E003B6D29 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = issue/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "wfrobin-163.com.issue";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		32A068922309260A003B6D29 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
+				DEBUG_INFORMATION_FORMAT = "";
+				DEFINES_MODULE = NO;
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "wfrobin-163.com.tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -434,14 +283,16 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
+				DEBUG_INFORMATION_FORMAT = "";
+				DEFINES_MODULE = NO;
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "wfrobin-163.com.tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -455,24 +306,6 @@
 			buildConfigurations = (
 				32A0687423091D76003B6D29 /* Debug */,
 				32A0687523091D76003B6D29 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		32A0687623091D76003B6D29 /* Build configuration list for PBXNativeTarget "leetcode" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				32A0687723091D76003B6D29 /* Debug */,
-				32A0687823091D76003B6D29 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		32A0688223091E8E003B6D29 /* Build configuration list for PBXNativeTarget "issue" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				32A0688323091E8E003B6D29 /* Debug */,
-				32A0688423091E8E003B6D29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
